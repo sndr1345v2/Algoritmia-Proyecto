@@ -6,6 +6,8 @@ class articulo
 {
 public:
     articulo();
+
+    void get_nombre();
 };
 
 #endif // ARTICULO_H
