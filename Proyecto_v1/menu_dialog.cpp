@@ -6,6 +6,7 @@ menu_dialog::menu_dialog(QWidget *parent) :
     ui(new Ui::menu_dialog)
 {
     ui->setupUi(this);
+    mostrar_dialog = new pantalla_mostrar;
 
 }
 
@@ -16,7 +17,7 @@ menu_dialog::~menu_dialog()
 
 void menu_dialog::on_botoncapturar_clicked()
 {
-  emit (confirma_boton(true));
+    mostrar_dialog->exec();
 }
 
 void menu_dialog::on_botonmodificar_clicked()

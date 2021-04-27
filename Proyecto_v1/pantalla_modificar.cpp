@@ -20,3 +20,5 @@ void pantalla_modificar::on_btnIdArticulo_clicked()
 
 }
 
+
+

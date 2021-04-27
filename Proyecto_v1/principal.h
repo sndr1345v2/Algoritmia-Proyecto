@@ -3,7 +3,7 @@
 
 #include <QObject>
 #include <menu_dialog.h>
-#include <pantalla_modificar.h>
+
 
 class principal : public QObject
 {
@@ -11,10 +11,8 @@ class principal : public QObject
 public:
     explicit principal(QObject *parent = nullptr);
     menu_dialog *menu;
-    pantalla_modificar *modificar;
 
-void comenzar();
-
+    void comenzar();
 
 signals:
 

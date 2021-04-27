@@ -2,6 +2,7 @@
 #define MENU_DIALOG_H
 
 #include <QDialog>
+#include <pantalla_mostrar.h>
 
 namespace Ui {
 class menu_dialog;
@@ -22,9 +23,9 @@ private slots:
 
 private:
     Ui::menu_dialog *ui;
+    pantalla_mostrar *mostrar_dialog;
 
 signals:
-    void confirma_boton(bool);
 
 
 
