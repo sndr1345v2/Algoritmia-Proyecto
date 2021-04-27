@@ -18,6 +18,8 @@ public:
 private slots:
     void on_botoncapturar_clicked();
 
+    void on_botonmodificar_clicked();
+
 private:
     Ui::menu_dialog *ui;
 

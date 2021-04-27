@@ -18,3 +18,8 @@ void menu_dialog::on_botoncapturar_clicked()
 {
   emit (confirma_boton(true));
 }
+
+void menu_dialog::on_botonmodificar_clicked()
+{
+
+}

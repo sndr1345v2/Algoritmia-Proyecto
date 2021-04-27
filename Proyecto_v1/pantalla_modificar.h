@@ -15,6 +15,9 @@ public:
     explicit pantalla_modificar(QWidget *parent = nullptr);
     ~pantalla_modificar();
 
+private slots:
+    void on_btnIdArticulo_clicked();
+
 private:
     Ui::pantalla_modificar *ui;
 };
