@@ -15,8 +15,17 @@ public:
     explicit menu_dialog(QWidget *parent = nullptr);
     ~menu_dialog();
 
+private slots:
+    void on_botoncapturar_clicked();
+
 private:
     Ui::menu_dialog *ui;
+
+signals:
+    void confirma_boton(bool);
+
+
+
 };
 
 #endif // MENU_DIALOG_H

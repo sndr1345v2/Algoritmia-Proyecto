@@ -6,9 +6,15 @@ menu_dialog::menu_dialog(QWidget *parent) :
     ui(new Ui::menu_dialog)
 {
     ui->setupUi(this);
+
 }
 
 menu_dialog::~menu_dialog()
 {
     delete ui;
+}
+
+void menu_dialog::on_botoncapturar_clicked()
+{
+  emit (confirma_boton(true));
 }
