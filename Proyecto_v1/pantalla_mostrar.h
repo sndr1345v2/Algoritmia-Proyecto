@@ -8,7 +8,16 @@
 #include "cliente.h"
 #include "encuesta.h"
 #include "venta.h"
-
+#include <QFile>
+#include <QDebug>
+#include <QTextStream>
+#include <QMessageBox>
+#include <QList>
+#include <QJsonArray>
+#include <QByteArray>
+#include <QJsonObject>
+#include <QJsonDocument>
+#include <QStandardItem>
 namespace Ui {
 class pantalla_mostrar;
 }
@@ -24,10 +33,25 @@ public:
     void cargar_clientes();
     void mostrar_clientes();
 
+    void cargar_articulos();
+    void mostrar_articulos();
+
+    void cargar_venta();
+    void mostrar_venta();
+
+    void cargar_encuesta();
+    void mostrar_encuesta();
+
+private slots:
+    void on_pushButton_menu_clicked();
+
+private:
+    Ui::pantalla_mostrar *ui;
+
     cliente c;
     articulo a;
     encuesta e;
-    venta v;
+    venta ven;
 
     QList<cliente> listaClientes;
     QList<articulo> listaArticulos;
@@ -35,8 +59,8 @@ public:
     QList<venta> listaVentas;
 
 
-private:
-    Ui::pantalla_mostrar *ui;
+signals:
+    void regresa_menu();
 };
 
 #endif // PANTALLA_MOSTRAR_H

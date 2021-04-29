@@ -21,12 +21,14 @@ private slots:
 
     void on_botonmodificar_clicked();
 
+    void on_boton_mostar_clicked();
+
 private:
     Ui::menu_dialog *ui;
     pantalla_mostrar *mostrar_dialog;
 
 signals:
-
+    void mostrar_pantalla();
 
 
 };

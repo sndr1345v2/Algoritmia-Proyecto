@@ -13,7 +13,7 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QPushButton" name="botoncapturar">
+  <widget class="QPushButton" name="boton_capturar">
    <property name="geometry">
     <rect>
      <x>170</x>
@@ -26,7 +26,7 @@
     <string>CAPTURAR</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="botonmodificar">
+  <widget class="QPushButton" name="boton_modificar">
    <property name="geometry">
     <rect>
      <x>170</x>
@@ -39,7 +39,7 @@
     <string>MODIFICAR</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_3">
+  <widget class="QPushButton" name="boton_mostar">
    <property name="geometry">
     <rect>
      <x>170</x>

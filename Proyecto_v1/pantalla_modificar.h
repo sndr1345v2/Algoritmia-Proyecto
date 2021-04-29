@@ -3,6 +3,7 @@
 
 #include <QDialog>
 
+
 namespace Ui {
 class pantalla_modificar;
 }
@@ -20,6 +21,7 @@ private slots:
 
 private:
     Ui::pantalla_modificar *ui;
+
 };
 
 #endif // PANTALLA_MODIFICAR_H
