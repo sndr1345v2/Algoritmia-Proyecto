@@ -1,10 +1,16 @@
-#include <QCoreApplication>
+#include <QApplication>
 #include <QDebug>
+#include <principal.h>
 
 int main(int argc, char *argv[])
 {
-    QCoreApplication a(argc, argv);
+    QApplication a(argc, argv);
+    principal run;
+    run.comenzar();
+
     return a.exec();
 
-    qDebug()<<"Hola que hace";
+
+
+
 }
