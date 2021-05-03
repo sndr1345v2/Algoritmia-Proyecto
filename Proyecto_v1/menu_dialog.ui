@@ -52,6 +52,19 @@
     <string>MOSTRAR</string>
    </property>
   </widget>
+  <widget class="QPushButton" name="boton_ordenar">
+   <property name="geometry">
+    <rect>
+     <x>170</x>
+     <y>220</y>
+     <width>161</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>ORDENAR</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>
