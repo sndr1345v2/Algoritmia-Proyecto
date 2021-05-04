@@ -21,3 +21,18 @@ void cliente::setNombre(QString cli_nombre){
 QString cliente::getNombre() const{
     return nombre;
 }
+<<<<<<< HEAD
+=======
+
+bool cliente::operator<(const cliente &obj) const{
+    return(id<obj.getId());
+}
+
+bool cliente::operator>(const cliente &obj) const{
+    return(id>obj.getId());
+}
+
+bool cliente::operator==(const cliente &obj) const{
+    return(id==obj.getId());
+}
+>>>>>>> miguel

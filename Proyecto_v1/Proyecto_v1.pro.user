@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<<<<<<< HEAD
-<!-- Written by QtCreator 4.14.2, 2021-05-02T23:45:50. -->
-=======
-<!-- Written by QtCreator 4.13.2, 2021-05-02T23:21:05. -->
->>>>>>> bf88a58c8a44f8aa9c64461d45e40e1d1749b103
+<!-- Written by QtCreator 4.13.2, 2021-05-03T22:27:31. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -329,16 +325,6 @@
     <valuelist type="QVariantList" key="CustomOutputParsers"/>
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
-<<<<<<< HEAD
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:C:/Users/raami/Desktop/CUCEI/4to Semestre/Algoritmia/Proyecto/Algoritmia-Proyecto/Proyecto_v1/Proyecto_v1.pro</value>
-    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">C:/Users/raami/Desktop/CUCEI/4to Semestre/Algoritmia/Proyecto/Algoritmia-Proyecto/Proyecto_v1/Proyecto_v1.pro</value>
-    <value type="bool" key="RunConfiguration.UseCppDebugger">false</value>
-    <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
-    <value type="bool" key="RunConfiguration.UseLibrarySearchPath">true</value>
-    <value type="bool" key="RunConfiguration.UseQmlDebugger">false</value>
-    <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
-    <value type="QString" key="RunConfiguration.WorkingDirectory.default">C:/Users/raami/Desktop/CUCEI/4to Semestre/Algoritmia/Proyecto/Algoritmia-Proyecto/build-Proyecto_v1-Desktop_Qt_5_15_2_MinGW_64_bit-Debug</value>
-=======
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:C:/Users/Sandra/Documents/2021-A/ALGORITMIA/Proyecto_Algoritmia/Proyecto_v1/Proyecto_v1.pro</value>
     <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">C:/Users/Sandra/Documents/2021-A/ALGORITMIA/Proyecto_Algoritmia/Proyecto_v1/Proyecto_v1.pro</value>
     <value type="QString" key="RunConfiguration.Arguments"></value>
@@ -1129,7 +1115,6 @@
     <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
     <value type="QString" key="RunConfiguration.WorkingDirectory"></value>
     <value type="QString" key="RunConfiguration.WorkingDirectory.default"></value>
->>>>>>> bf88a58c8a44f8aa9c64461d45e40e1d1749b103
    </valuemap>
    <value type="int" key="ProjectExplorer.Target.RunConfigurationCount">1</value>
   </valuemap>

@@ -17,7 +17,10 @@ SOURCES += \
         menu_dialog.cpp \
         pantalla_modificar.cpp \
         pantalla_mostrar.cpp \
+<<<<<<< HEAD
         pantalla_ordernar.cpp \
+=======
+>>>>>>> miguel
         pantalla_registrar.cpp \
         principal.cpp \
         venta.cpp
@@ -34,7 +37,10 @@ HEADERS += \
     menu_dialog.h \
     pantalla_modificar.h \
     pantalla_mostrar.h \
+<<<<<<< HEAD
     pantalla_ordernar.h \
+=======
+>>>>>>> miguel
     pantalla_registrar.h \
     principal.h \
     venta.h
@@ -43,5 +49,8 @@ FORMS += \
     menu_dialog.ui \
     pantalla_modificar.ui \
     pantalla_mostrar.ui \
+<<<<<<< HEAD
     pantalla_ordernar.ui \
+=======
+>>>>>>> miguel
     pantalla_registrar.ui

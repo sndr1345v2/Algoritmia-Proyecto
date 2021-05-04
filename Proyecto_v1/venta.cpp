@@ -46,6 +46,7 @@ QString venta::getCosto() const{
     return costo;
 }
 
+<<<<<<< HEAD
 void venta::setVenta_registro(QString venta_venta_registro){
     venta_registro = venta_venta_registro;
 }
@@ -54,3 +55,24 @@ QString venta::getVenta_registro() const{
     return venta_registro;
 }
 
+=======
+void venta::setVenta_registro(int venta_venta_registro){
+    venta_registro = venta_venta_registro;
+}
+
+int venta::getVenta_registro() const{
+    return venta_registro;
+}
+
+bool venta::operator<(const venta &obj) const{
+    return(venta_registro<obj.getVenta_registro());
+}
+
+bool venta::operator>(const venta &obj) const{
+    return(venta_registro>obj.getVenta_registro());
+}
+
+bool venta::operator==(const venta &obj) const{
+    return(venta_registro==obj.getVenta_registro());
+
+>>>>>>> miguel

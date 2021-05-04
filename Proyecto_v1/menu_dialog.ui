@@ -50,6 +50,7 @@
    </property>
    <property name="text">
     <string>MOSTRAR</string>
+<<<<<<< HEAD
    </property>
   </widget>
   <widget class="QPushButton" name="boton_ordenar">
@@ -63,6 +64,8 @@
    </property>
    <property name="text">
     <string>ORDENAR</string>
+=======
+>>>>>>> miguel
    </property>
   </widget>
  </widget>

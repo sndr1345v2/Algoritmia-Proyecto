@@ -28,8 +28,11 @@ void menu_dialog::on_boton_mostar_clicked()
 {
    emit mostrar_pantalla();
 }
+<<<<<<< HEAD
 
 void menu_dialog::on_boton_ordenar_clicked()
 {
 
 }
+=======
+>>>>>>> miguel

@@ -17,6 +17,13 @@ public:
     QString getId()const;
     void setNombre(QString);
     QString getNombre()const;
+<<<<<<< HEAD
+=======
+
+    bool operator<(const cliente&)const;
+    bool operator>(const cliente&)const;
+    bool operator==(const cliente&)const;
+>>>>>>> miguel
 };
 
 #endif // CLIENTE_H

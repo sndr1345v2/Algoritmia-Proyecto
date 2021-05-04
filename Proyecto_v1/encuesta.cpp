@@ -22,6 +22,7 @@ QString encuesta::getFecha() const{
     return fecha;
 }
 
+<<<<<<< HEAD
 void encuesta::setGrado_satisfaccion(QString enc_grado_satisfaccion){
     grado_satisfaccion = enc_grado_satisfaccion;
 }
@@ -30,3 +31,24 @@ QString encuesta::getGrado_satisfaccion() const{
     return grado_satisfaccion;
 }
 
+=======
+void encuesta::setGrado_satisfaccion(int enc_grado_satisfaccion){
+    grado_satisfaccion = enc_grado_satisfaccion;
+}
+
+int encuesta::getGrado_satisfaccion() const{
+    return grado_satisfaccion;
+}
+
+bool encuesta::operator<(const encuesta &obj) const{
+    return(grado_satisfaccion<obj.getGrado_satisfaccion());
+}
+
+bool encuesta::operator>(const encuesta &obj) const{
+    return(grado_satisfaccion>obj.getGrado_satisfaccion());
+}
+
+bool encuesta::operator==(const encuesta &obj) const{
+    return(grado_satisfaccion==obj.getGrado_satisfaccion());
+
+>>>>>>> miguel

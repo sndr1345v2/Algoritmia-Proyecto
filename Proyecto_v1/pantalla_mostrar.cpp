@@ -175,7 +175,11 @@ void pantalla_mostrar::cargar_venta()
             ven.setId(v.toObject().value("id").toString());//Indexa y transforma de objeto a cadena
             ven.setFecha(v.toObject().value("fecha ").toString());
             ven.setCosto(v.toObject().value("costo").toString());//Indexa y transforma de objeto a cadena
+<<<<<<< HEAD
             ven.setVenta_registro(v.toObject().value("venta ").toString());
+=======
+            ven.setVenta_registro(v.toObject().value("venta ").toInt());
+>>>>>>> miguel
             ven.setId_cliente(v.toObject().value("id_cliente ").toString());
             ven.setId_articulo(v.toObject().value("id_articulo").toString());
             listaVentas.push_back(ven);
@@ -245,7 +249,11 @@ void pantalla_mostrar::cargar_encuesta()
         foreach (const QJsonValue & v, usersArray) //Busca en el arreglo por los valoresJSON del arreglo
         {
             e.setId_venta(v.toObject().value("id_venta ").toString());//Indexa y transforma de objeto a cadena
+<<<<<<< HEAD
             e.setGrado_satisfaccion(v.toObject().value("grado_satisfaccion").toString());
+=======
+            e.setGrado_satisfaccion(v.toObject().value("grado_satisfaccion").toInt());
+>>>>>>> miguel
 
             listaEncuestas.push_back(e);
         }
