@@ -15,6 +15,7 @@ SOURCES += \
         encuesta.cpp \
         main.cpp \
         menu_dialog.cpp \
+        ordenar_dialog.cpp \
         pantalla_modificar.cpp \
         pantalla_mostrar.cpp \
         pantalla_registrar.cpp \
@@ -31,6 +32,7 @@ HEADERS += \
     cliente.h \
     encuesta.h \
     menu_dialog.h \
+    ordenar_dialog.h \
     pantalla_modificar.h \
     pantalla_mostrar.h \
     pantalla_registrar.h \
@@ -39,6 +41,7 @@ HEADERS += \
 
 FORMS += \
     menu_dialog.ui \
+    ordenar_dialog.ui \
     pantalla_modificar.ui \
     pantalla_mostrar.ui \
     pantalla_registrar.ui

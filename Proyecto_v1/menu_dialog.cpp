@@ -28,3 +28,4 @@ void menu_dialog::on_boton_mostar_clicked()
 {
    emit mostrar_pantalla();
 }
+

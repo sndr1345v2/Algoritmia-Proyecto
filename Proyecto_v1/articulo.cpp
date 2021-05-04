@@ -46,5 +46,5 @@ bool articulo::operator>(const articulo &obj) const{
 }
 
 bool articulo::operator==(const articulo &obj) const{
-    return(id==obj.getId());
+    return(id==obj.getId() && nombre==obj.getNombre() && venta==obj.getVenta() && costo==obj.getCosto());
 }
