@@ -64,4 +64,5 @@ bool venta::operator>(const venta &obj) const{
 
 bool venta::operator==(const venta &obj) const{
     return(venta_registro==obj.getVenta_registro());
+ }
 

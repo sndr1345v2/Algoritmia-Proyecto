@@ -40,4 +40,5 @@ bool encuesta::operator>(const encuesta &obj) const{
 
 bool encuesta::operator==(const encuesta &obj) const{
     return(grado_satisfaccion==obj.getGrado_satisfaccion());
+ }
 
