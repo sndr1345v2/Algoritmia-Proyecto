@@ -23,6 +23,8 @@ private slots:
 
     void on_boton_mostar_clicked();
 
+    void on_boton_ordenar_clicked();
+
 private:
     Ui::menu_dialog *ui;
     pantalla_mostrar *mostrar_dialog;
