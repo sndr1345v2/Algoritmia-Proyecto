@@ -1,4 +1,0 @@
-1. Cambiar getters y setters de la clase Venta y de la clase Encuesta para que sean de tipo Int, y cambiar atributos para venta_registro y grado_satisfacción
-2. Agregar sobrecarga de operadores a todas las clases involucradas: articulo, cliente, encuesta, venta 
-
->>revisar el proyecto Booking_Good>libro.h
