@@ -32,7 +32,7 @@ void pantalla_mostrar::on_pushButton_menu_clicked()
 void pantalla_mostrar::cargar_clientes()
 {
     qDebug() <<"Print";
-    QFile jsonFile("registros_clientes/clientes.json");
+    QFile jsonFile("registros_clientesv2/clientes.json");
 
     if(jsonFile.open(QIODevice::ReadOnly| QIODevice::Text))
     {

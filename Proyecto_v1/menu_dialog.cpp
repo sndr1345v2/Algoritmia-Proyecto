@@ -29,3 +29,8 @@ void menu_dialog::on_boton_mostar_clicked()
    emit mostrar_pantalla();
 }
 
+
+void menu_dialog::on_boton_ordenar_clicked()
+{
+    emit ordenar_pantalla();
+}

@@ -1,11 +1,14 @@
 #include "ordenar_dialog.h"
 #include "ui_ordenar_dialog.h"
 
+
 ordenar_dialog::ordenar_dialog(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::ordenar_dialog)
 {
     ui->setupUi(this);
+
+    objeto_mostrar.cargar_clientes();
 }
 
 ordenar_dialog::~ordenar_dialog()
@@ -13,8 +16,18 @@ ordenar_dialog::~ordenar_dialog()
     delete ui;
 }
 
+void ordenar_dialog::test_find()
+{
+  QList<cliente> lista_clientes = objeto_mostrar.listaClientes;
+  QList<articulo> lista_articulos = objeto_mostrar.listaArticulos;
 
-vector<Libro> menu_dialog::merge(const vector<Libro> &left, const vector<Libro> &right)
+  for(int i=0; i<lista_clientes.size();i++){
+      qDebug()<<"Lista clientes copiada: "<<lista_clientes[i].getId();
+  }
+}
+
+
+/*vector<Libro> menu_dialog::merge(const vector<Libro> &left, const vector<Libro> &right)
 {
 
     vector<Libro> result;
@@ -72,4 +85,9 @@ vector<Libro> menu_dialog::merge_sort(vector<Libro> &vec)
     right = merge_sort(right);
 
     return merge(left, right);
+}*/
+
+void ordenar_dialog::on_pushButton_regresarMenu_clicked()
+{
+    emit regresa_menu();
 }

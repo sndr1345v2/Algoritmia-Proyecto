@@ -18,6 +18,7 @@
 #include <QJsonObject>
 #include <QJsonDocument>
 #include <QStandardItem>
+
 namespace Ui {
 class pantalla_mostrar;
 }
@@ -40,13 +41,7 @@ public:
     void mostrar_venta();
 
     void cargar_encuesta();
-    void mostrar_encuesta();
-
-private slots:
-    void on_pushButton_menu_clicked();
-
-private:
-    Ui::pantalla_mostrar *ui;
+    void mostrar_encuesta(); 
 
     cliente c;
     articulo a;
@@ -57,6 +52,13 @@ private:
     QList<articulo> listaArticulos;
     QList<encuesta> listaEncuestas;
     QList<venta> listaVentas;
+
+private slots:
+    void on_pushButton_menu_clicked();
+
+private:
+    Ui::pantalla_mostrar *ui;
+
 
 
 signals:
