@@ -3,6 +3,7 @@
 
 #include <QDialog>
 
+
 namespace Ui {
 class ordenar_dialog;
 }
@@ -17,8 +18,8 @@ public:
 
 private:
     Ui::ordenar_dialog *ui;
-    vector<template> merge();
-    vector<template> merge_sort();
+    /*vector<template> merge();
+    vector<template> merge_sort();*/
 
 };
 
