@@ -5,6 +5,12 @@ cliente::cliente()
 
 }
 
+cliente::cliente(QString id_, QString nombre_)
+{
+    id_ = id;
+    nombre_ = nombre;
+}
+
 
 void cliente::setId(QString cli_id){
     id = cli_id;

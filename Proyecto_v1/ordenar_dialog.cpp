@@ -8,7 +8,6 @@ ordenar_dialog::ordenar_dialog(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    objeto_mostrar.cargar_clientes();
 }
 
 ordenar_dialog::~ordenar_dialog()
@@ -18,12 +17,19 @@ ordenar_dialog::~ordenar_dialog()
 
 void ordenar_dialog::test_find()
 {
+    /*
   QList<cliente> lista_clientes = objeto_mostrar.listaClientes;
   QList<articulo> lista_articulos = objeto_mostrar.listaArticulos;
 
   for(int i=0; i<lista_clientes.size();i++){
+      for (int j=0; i<lista_articulos.size();j++){
+          if(lista_articulos[i].getId()==lista_clientes[i].getId()){
+              lista_articulos[i].getNombre();
+              lista_clientes[i].getNombre();
+          }
+      }
       qDebug()<<"Lista clientes copiada: "<<lista_clientes[i].getId();
-  }
+  }*/
 }
 
 

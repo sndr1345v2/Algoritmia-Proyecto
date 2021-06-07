@@ -38,11 +38,11 @@ QString venta::getId_articulo() const{
     return id_articulo;
 }
 
-void venta::setCosto(QString venta_costo){
+void venta::setCosto(double venta_costo){
     costo = venta_costo;
 }
 
-QString venta::getCosto() const{
+double venta::getCosto() const{
     return costo;
 }
 

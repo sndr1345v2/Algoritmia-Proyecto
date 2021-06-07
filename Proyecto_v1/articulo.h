@@ -9,20 +9,20 @@ class articulo
 private:
     QString id;
     QString nombre;
-    QString costo;
-    QString venta;
+    double costo;
+    int id_venta;
 public:
     articulo();
-    articulo(QString id,QString nombre,QString costo, QString venta);
+    articulo(QString id,QString nombre,QString costo, QString id_venta);
 
     void setId(QString);
     QString getId()const;
     void setNombre(QString);
     QString getNombre()const;
-    void setCosto(QString);
-    QString getCosto()const;
-    void setVenta(QString);
-    QString getVenta()const;
+    void setCosto(double);
+    double getCosto()const;
+    void setIdVenta(int);
+    int getIdVenta()const;
 
     bool operator<(const articulo&)const;
     bool operator>(const articulo&)const;

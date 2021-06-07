@@ -11,7 +11,7 @@ private:
     QString fecha;
     QString id_cliente;
     QString id_articulo;
-    QString costo;
+    double costo;
     int venta_registro;
 public:
     venta();
@@ -26,8 +26,8 @@ public:
     QString getId_cliente()const;
     void setId_articulo(QString);
     QString getId_articulo()const;
-    void setCosto(QString);
-    QString getCosto()const;
+    void setCosto(double);
+    double getCosto()const;
     void setVenta_registro(int);
     int getVenta_registro()const;
 
