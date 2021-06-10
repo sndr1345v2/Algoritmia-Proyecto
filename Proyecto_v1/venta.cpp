@@ -54,16 +54,4 @@ int venta::getVenta_registro() const{
     return venta_registro;
 }
 
-bool venta::operator<(const venta &obj) const{
-    return(venta_registro<obj.getVenta_registro());
-}
-
-bool venta::operator>(const venta &obj) const{
-    return(venta_registro>obj.getVenta_registro());
-}
-
-bool venta::operator==(const venta &obj) const{
-    return(venta_registro==obj.getVenta_registro());
-}
-
 

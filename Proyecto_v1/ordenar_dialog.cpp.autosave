@@ -247,7 +247,7 @@ void ordenar_dialog::on_comboBox_ordenar_2_currentTextChanged(const QString &cur
         listaVentaCopy.clear();
         std::copy(vector2.begin(), vector2.end(), std::back_inserter(listaVentaCopy));
         actualiza_listaVentaCopy();
-        //mostrar_ordenar_ventas(listaVentaCopy);
+       
 
     }
 }
