@@ -10,12 +10,14 @@ ordenar_dialog::ordenar_dialog(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    QStringList opciones_ordenar1, opciones_ordenar2;
+    QStringList opciones_ordenar1, opciones_ordenar2,opciones_ordenar3 ;
 
     opciones_ordenar1<<"     "<<"Grado de satisfaccion";
     opciones_ordenar2<<"     "<<"Id cliente"<<"Costo total"<<"Venta total";
+    opciones_ordenar3<<"     "<<"Numero de ventas";
     ui->comboBox_ordenar->addItems(opciones_ordenar1);
     ui->comboBox_ordenar_2->addItems(opciones_ordenar2);
+    ui->comboBox_ordenar_3->addItems(opciones_ordenar3);
 }
 
 ordenar_dialog::~ordenar_dialog()
@@ -24,17 +26,22 @@ ordenar_dialog::~ordenar_dialog()
 }
 
 
-void ordenar_dialog::recibe_listas_ordenar(QList<venta> listaVentas, QList<encuesta> listaEncuesta)
+void ordenar_dialog::recibe_listas_ordenar(QList<venta> listaVentas, QList<encuesta> listaEncuesta, QList <articulo> listaArticulos)
 {
     listaEncuestav1 = listaEncuesta;
+    listaEncuestaCopy = listaEncuesta;
     listaVentav1 = listaVentas;
     listaVentaCopy = listaVentas;
+    listaArticulov1 = listaArticulos;
+    listaArticuloCopy = listaArticulos;
 
-    mostrar_ordenar_encuestas();
+    mostrar_ordenar_encuestas(listaEncuestav1);
     mostrar_ordenar_ventas(listaVentav1);
+    mostrar_ordenar_articulos(listaArticulov1);
 }
 
-void ordenar_dialog::mostrar_ordenar_encuestas()
+template <typename encuesta>
+void ordenar_dialog::mostrar_ordenar_encuestas(QList <encuesta> listaX)
 {
 
     QStandardItemModel *model_encuestas = new QStandardItemModel;
@@ -43,12 +50,11 @@ void ordenar_dialog::mostrar_ordenar_encuestas()
     model_encuestas->setHorizontalHeaderItem(1,new QStandardItem(QString("Fecha")));
     model_encuestas->setHorizontalHeaderItem(2,new QStandardItem(QString("Grado_satisfaccion")));
 
-    for(int i = 0; i <listaEncuestav1.size(); i++)
+    for(int i = 0; i <listaX.size(); i++)
     {
-
-        QStandardItem *id = new QStandardItem(listaEncuestav1[i].getId_venta());
-        QStandardItem *fecha = new QStandardItem(listaEncuestav1[i].getFecha());
-        QStandardItem *grado = new QStandardItem (QString::number(listaEncuestav1[i].getGrado_satisfaccion()));
+        QStandardItem *id = new QStandardItem(listaX[i].getId_venta());
+        QStandardItem *fecha = new QStandardItem(listaX[i].getFecha());
+        QStandardItem *grado = new QStandardItem (QString::number(listaX[i].getGrado_satisfaccion()));
 
         model_encuestas->setItem(i, 0, id);
         model_encuestas->setItem(i, 1, fecha);
@@ -72,7 +78,7 @@ void ordenar_dialog::mostrar_ordenar_ventas(QList <venta> listaX)
     model_venta->setHorizontalHeaderItem(0,new QStandardItem(QString("Id_venta")));
     model_venta->setHorizontalHeaderItem(1,new QStandardItem(QString("Fecha")));
     model_venta->setHorizontalHeaderItem(2,new QStandardItem(QString("Costo_total")));
-    model_venta->setHorizontalHeaderItem(3,new QStandardItem(QString("Numero_de_venta")));
+    model_venta->setHorizontalHeaderItem(3,new QStandardItem(QString("Vent total")));
     model_venta->setHorizontalHeaderItem(4,new QStandardItem(QString("Id_Cliente")));
     model_venta->setHorizontalHeaderItem(5,new QStandardItem(QString("Id_Articulo")));
 
@@ -127,11 +133,6 @@ void ordenar_dialog::on_pushButton_regresarMenu_clicked()
     emit regresa_menu();
 }
 
-void ordenar_dialog::on_comboBox_ordenar_currentTextChanged(const QString &current_text)
-{
-
-
-}
 
 
 template<class T>
@@ -139,9 +140,6 @@ vector <T> merge(const vector<T> &left, const vector<T> &right)
 {
     vector<T> result;
     unsigned left_it = 0, right_it = 0;
-
-    //string left_it =left[0].get_titulo();
-    //string right_it= right[0].get_titulo();
 
     while(left_it < left.size() && right_it < right.size())
     {
@@ -198,7 +196,7 @@ void ordenar_dialog:: actualiza_listaVentaCopy()
     model_venta->setHorizontalHeaderItem(0,new QStandardItem(QString("Id_venta")));
     model_venta->setHorizontalHeaderItem(1,new QStandardItem(QString("Fecha")));
     model_venta->setHorizontalHeaderItem(2,new QStandardItem(QString("Costo_total")));
-    model_venta->setHorizontalHeaderItem(3,new QStandardItem(QString("Numero_de_venta")));
+    model_venta->setHorizontalHeaderItem(3,new QStandardItem(QString("Venta_total")));
     model_venta->setHorizontalHeaderItem(4,new QStandardItem(QString("Id_Cliente")));
     model_venta->setHorizontalHeaderItem(5,new QStandardItem(QString("Id_Articulo")));
 
@@ -230,7 +228,66 @@ void ordenar_dialog:: actualiza_listaVentaCopy()
 
 }
 
+void ordenar_dialog::actualiza_listaEncuestaCopy()
+{
+    QStandardItemModel *model_encuestas = new QStandardItemModel;
 
+    model_encuestas->setHorizontalHeaderItem(0,new QStandardItem(QString("Id_venta")));
+    model_encuestas->setHorizontalHeaderItem(1,new QStandardItem(QString("Fecha")));
+    model_encuestas->setHorizontalHeaderItem(2,new QStandardItem(QString("Grado_satisfaccion")));
+
+    for(int i = 0; i <listaEncuestaCopy.size(); i++)
+    {
+        QStandardItem *id = new QStandardItem(listaEncuestaCopy[i].getId_venta());
+        QStandardItem *fecha = new QStandardItem(listaEncuestaCopy[i].getFecha());
+        QStandardItem *grado = new QStandardItem (QString::number(listaEncuestaCopy[i].getGrado_satisfaccion()));
+
+        model_encuestas->setItem(i, 0, id);
+        model_encuestas->setItem(i, 1, fecha);
+        model_encuestas->setItem(i, 2, grado);
+
+    }
+
+    ui->table_encuestas->setModel(model_encuestas);
+    ui->table_encuestas->setEditTriggers(QAbstractItemView::NoEditTriggers);
+
+    ui->table_encuestas->resizeColumnToContents(0);
+    ui->table_encuestas->setColumnWidth(1,260);
+    ui->table_encuestas->setColumnWidth(2,190);
+    ui->table_encuestas->verticalHeader()->setVisible(false);
+}
+
+void ordenar_dialog::actualiza_listaArticuloCopy()
+{
+    model_articulos->setHorizontalHeaderItem(0,new QStandardItem(QString("Id_articulo")));
+    model_articulos->setHorizontalHeaderItem(1,new QStandardItem(QString("Nombre")));
+    model_articulos->setHorizontalHeaderItem(2,new QStandardItem(QString("Costo")));
+    model_articulos->setHorizontalHeaderItem(3,new QStandardItem(QString("Numero_ventas")));
+
+    for(int i = 0; i <listaArticuloCopy.size(); i++)
+    {
+        QStandardItem *id = new QStandardItem(listaArticuloCopy[i].getId());
+        QStandardItem *nombre = new QStandardItem (listaArticuloCopy[i].getNombre());
+        QStandardItem *costo = new QStandardItem(QString::number(listaArticuloCopy[i].getCosto()));
+        QStandardItem *id_venta = new QStandardItem (QString::number(listaArticuloCopy[i].getIdVenta()));
+
+        model_articulos->setItem(i, 0, id);
+        model_articulos->setItem(i, 1, nombre);
+        model_articulos->setItem(i, 2, costo);
+        model_articulos->setItem(i, 3, id_venta);
+
+    }
+
+    ui->table_articulos->setModel(model_articulos);
+    ui->table_articulos->setEditTriggers(QAbstractItemView::NoEditTriggers);
+
+    ui->table_articulos->resizeColumnToContents(0);
+    ui->table_articulos->setColumnWidth(1,260);
+    ui->table_articulos->setColumnWidth(2,190);
+    ui->table_articulos->verticalHeader()->setVisible(false);
+}
+
+//Ordenar Ventas
 void ordenar_dialog::on_comboBox_ordenar_2_currentTextChanged(const QString &current_text)
 {
     if(current_text == "Id cliente")
@@ -247,8 +304,112 @@ void ordenar_dialog::on_comboBox_ordenar_2_currentTextChanged(const QString &cur
         listaVentaCopy.clear();
         std::copy(vector2.begin(), vector2.end(), std::back_inserter(listaVentaCopy));
         actualiza_listaVentaCopy();
-        //mostrar_ordenar_ventas(listaVentaCopy);
+    }
+    if(current_text == "Costo total")
+    {
+        vector<venta>vector1;
+        vector<venta>vector2;
+
+        std::copy(listaVentaCopy.begin(), listaVentaCopy.end(), std::back_inserter(vector1));
+
+        for(int i=0; i<vector1.size();i++){
+            vector1[i].set_opc(5);
+        }
+        vector2 = merge_sort(vector1);
+        listaVentaCopy.clear();
+        std::copy(vector2.begin(), vector2.end(), std::back_inserter(listaVentaCopy));
+        actualiza_listaVentaCopy();
+    }
+    if(current_text == "Venta total")
+    {
+        vector<venta>vector1;
+        vector<venta>vector2;
+
+        std::copy(listaVentaCopy.begin(), listaVentaCopy.end(), std::back_inserter(vector1));
+
+        for(int i=0; i<vector1.size();i++){
+            vector1[i].set_opc(6);
+        }
+        vector2 = merge_sort(vector1);
+        listaVentaCopy.clear();
+        std::copy(vector2.begin(), vector2.end(), std::back_inserter(listaVentaCopy));
+        actualiza_listaVentaCopy();
+    }
+}
+
+//Ordenar encuestas
+void ordenar_dialog::on_comboBox_ordenar_currentTextChanged(const QString &current_text)
+{
+
+    if(current_text == "Grado de satisfaccion")
+    {
+
+            vector<encuesta>vector1;
+            vector<encuesta>vector2;
+
+            std::copy(listaEncuestaCopy.begin(), listaEncuestaCopy.end(), std::back_inserter(vector1));
+
+            for(int i=0; i<vector1.size();i++){
+                vector1[i].set_opc(1);
+            }
+            vector2 = merge_sort(vector1);
+            listaEncuestaCopy.clear();
+            std::copy(vector2.begin(), vector2.end(), std::back_inserter(listaEncuestaCopy));
+            actualiza_listaEncuestaCopy();
 
     }
 }
 
+//Ordenar Articulos
+void ordenar_dialog::on_comboBox_ordenar_3_currentTextChanged(const QString &current_text)
+{
+    if(current_text == "Numero de ventas")
+    {
+
+            vector<articulo>vector1;
+            vector<articulo>vector2;
+
+            std::copy(listaArticuloCopy.begin(), listaArticuloCopy.end(), std::back_inserter(vector1));
+
+            for(int i=0; i<vector1.size();i++){
+                vector1[i].set_opc(1);
+            }
+            vector2 = merge_sort(vector1);
+            listaArticuloCopy.clear();
+            std::copy(vector2.begin(), vector2.end(), std::back_inserter(listaArticuloCopy));
+            actualiza_listaArticuloCopy();
+
+    }
+}
+
+template<typename articulo>
+void ordenar_dialog::mostrar_ordenar_articulos(QList<articulo> listaX)
+{
+
+    model_articulos->setHorizontalHeaderItem(0,new QStandardItem(QString("Id_articulo")));
+    model_articulos->setHorizontalHeaderItem(1,new QStandardItem(QString("Nombre")));
+    model_articulos->setHorizontalHeaderItem(2,new QStandardItem(QString("Costo")));
+    model_articulos->setHorizontalHeaderItem(3,new QStandardItem(QString("Numero_ventas")));
+
+    for(int i = 0; i <listaX.size(); i++)
+    {
+        QStandardItem *id = new QStandardItem(listaX[i].getId());
+        QStandardItem *nombre = new QStandardItem (listaX[i].getNombre());
+        QStandardItem *costo = new QStandardItem(QString::number(listaX[i].getCosto()));
+        QStandardItem *id_venta = new QStandardItem (QString::number(listaX[i].getIdVenta()));
+
+        model_articulos->setItem(i, 0, id);
+        model_articulos->setItem(i, 1, nombre);
+        model_articulos->setItem(i, 2, costo);
+        model_articulos->setItem(i, 3, id_venta);
+
+    }
+
+    ui->table_articulos->setModel(model_articulos);
+    ui->table_articulos->setEditTriggers(QAbstractItemView::NoEditTriggers);
+
+    ui->table_articulos->resizeColumnToContents(0);
+    ui->table_articulos->setColumnWidth(1,260);
+    ui->table_articulos->setColumnWidth(2,190);
+    ui->table_articulos->verticalHeader()->setVisible(false);
+}

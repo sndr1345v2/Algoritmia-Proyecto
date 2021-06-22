@@ -37,14 +37,3 @@ int articulo::getIdVenta() const{
     return id_venta;
 }
 
-bool articulo::operator<(const articulo &obj) const{
-    return(id<obj.getId());
-}
-
-bool articulo::operator>(const articulo &obj) const{
-    return(id>obj.getId());
-}
-
-bool articulo::operator==(const articulo &obj) const{
-    return(id==obj.getId() && nombre==obj.getNombre() && id_venta==obj.getIdVenta() && costo==obj.getCosto());
-}

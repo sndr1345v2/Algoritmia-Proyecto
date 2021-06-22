@@ -41,7 +41,7 @@ public:
 signals:
     
     void envia_listas(QList<cliente>,  QList<articulo>, QList<encuesta>, QList<venta> );
-    void envia_listas_ordenar(QList<venta>,QList<encuesta>);
+    void envia_listas_ordenar(QList<venta>,QList<encuesta>,QList<articulo>);
     
 public slots:
     

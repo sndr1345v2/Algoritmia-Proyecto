@@ -30,14 +30,3 @@ int encuesta::getGrado_satisfaccion() const{
     return grado_satisfaccion;
 }
 
-bool encuesta::operator<(const encuesta &obj) const{
-    return(grado_satisfaccion<obj.getGrado_satisfaccion());
-}
-
-bool encuesta::operator>(const encuesta &obj) const{
-    return(grado_satisfaccion>obj.getGrado_satisfaccion());
-}
-
-bool encuesta::operator==(const encuesta &obj) const{
-    return(grado_satisfaccion==obj.getGrado_satisfaccion());}
-

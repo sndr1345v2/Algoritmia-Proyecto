@@ -17,7 +17,7 @@ principal::principal(QObject *parent) : QObject(parent)
     QObject::connect(menu, SIGNAL(ordenar_pantalla()), this, SLOT(abre_ordenar()));
     QObject::connect(p_ordenar, SIGNAL(regresa_menu()), this, SLOT(abre_menu()));
     QObject::connect(this, SIGNAL(envia_listas(QList<cliente>,QList<articulo>,QList<encuesta>,QList<venta>)), p_mostrar, SLOT(recibe_listas(QList<cliente>,QList<articulo>,QList<encuesta>,QList<venta>)));
-    QObject::connect(this, SIGNAL(envia_listas_ordenar(QList<venta>,QList<encuesta>)), p_ordenar, SLOT(recibe_listas_ordenar(QList<venta>,QList<encuesta>)));
+    QObject::connect(this, SIGNAL(envia_listas_ordenar(QList<venta>,QList<encuesta>,QList<articulo>)), p_ordenar, SLOT(recibe_listas_ordenar(QList<venta>,QList<encuesta>,QList<articulo>)));
 
     
 }
@@ -112,8 +112,8 @@ void principal::cargar_venta()
             ven.setFecha(v.toObject().value("fecha").toString());
             double costo = v.toObject().value("costo_total").toString().toDouble();
             ven.setCosto(costo);
-            int num_venta = v.toObject().value("numero_de_venta").toString().toInt();
-            ven.setVenta_registro(num_venta);
+            double total_venta = v.toObject().value("numero_de_venta").toString().toDouble();
+            ven.setVenta_registro(total_venta);
             ven.setId_cliente(v.toObject().value("id_cliente").toString());
             ven.setId_articulo(v.toObject().value("id_articulo").toString());
             
@@ -170,7 +170,7 @@ void principal::comenzar()
 
     menu->show();
 
-    emit envia_listas(listaClientes,listaArticulos,listaEncuestas,listaVentas), envia_listas_ordenar(listaVentas,listaEncuestas);
+    emit envia_listas(listaClientes,listaArticulos,listaEncuestas,listaVentas), envia_listas_ordenar(listaVentas,listaEncuestas,listaArticulos);
 }
 
 void principal::abre_menu()

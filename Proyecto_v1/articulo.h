@@ -11,6 +11,7 @@ private:
     QString nombre;
     double costo;
     int id_venta;
+    int opcion;
 public:
     articulo();
     articulo(QString id,QString nombre,QString costo, QString id_venta);
@@ -24,9 +25,23 @@ public:
     void setIdVenta(int);
     int getIdVenta()const;
 
-    bool operator<(const articulo&)const;
-    bool operator>(const articulo&)const;
-    bool operator==(const articulo&)const;
+    void set_opc(int opcion_text)
+    {opcion=opcion_text;}
+
+    int get_opc()
+    {return opcion;}
+
+    bool operator<(const articulo& obj)const{
+        if(opcion==1){return id_venta<obj.id_venta;}
+    }
+
+
+    bool operator>(const articulo& obj)const{
+         if(opcion==1){return id_venta>obj.id_venta;}}
+
+    bool operator==(const articulo& obj)const{
+         if(opcion==1){return id_venta==obj.id_venta;}
+    }
 
 };
 
