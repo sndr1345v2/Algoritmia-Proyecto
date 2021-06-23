@@ -22,6 +22,7 @@ principal::principal(QObject *parent) : QObject(parent)
     
 }
 
+//Clientes
 void principal::cargar_clientes()
 {
     qDebug() <<"Print";
@@ -54,6 +55,7 @@ void principal::cargar_clientes()
     }
 }
 
+//Articulos
 void principal::cargar_articulos()
 {
     
@@ -74,10 +76,11 @@ void principal::cargar_articulos()
         
         foreach (const QJsonValue & v, usersArray) //Busca en el arreglo por los valoresJSON del arreglo
         {
-            a.setId(v.toObject().value("id_articulo").toString());
+            a.setId(QString::number(v.toObject().value("id_articulo").toInt()));
             a.setNombre(v.toObject().value("nombre").toString());
             a.setCosto(v.toObject().value("costo").toDouble());
             a.setIdVenta(v.toObject().value("num_ventas").toInt());
+            a.setGradoSat((v.toObject().value("grado_satisfaccion").toInt()));
             
             listaArticulos.push_back(a);
         }

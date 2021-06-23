@@ -45,16 +45,11 @@ void pantalla_mostrar::mostrar_clientes()
     model_clientes->setHorizontalHeaderItem(0,new QStandardItem(QString("Id_cliente")));
     model_clientes->setHorizontalHeaderItem(1,new QStandardItem(QString("Nombre")));
 
-    for(int i = 0; i < listaClientes1.size(); i++)
-
-
-    {
+    for(int i = 0; i < listaClientes1.size(); i++){
         QStandardItem *id = new QStandardItem(listaClientes1[i].getId());
         QStandardItem *nombre = new QStandardItem (listaClientes1[i].getNombre());
-
         model_clientes->setItem(i, 0, id);
         model_clientes->setItem(i, 1, nombre);
-
     }
 
     ui->table_clientes->setModel(model_clientes);
@@ -75,6 +70,7 @@ void pantalla_mostrar::mostrar_articulos()
     model_articulos->setHorizontalHeaderItem(1,new QStandardItem(QString("Nombre")));
     model_articulos->setHorizontalHeaderItem(2,new QStandardItem(QString("Costo")));
     model_articulos->setHorizontalHeaderItem(3,new QStandardItem(QString("Numero_ventas")));
+    model_articulos->setHorizontalHeaderItem(4,new QStandardItem(QString("Grado_satisfaccion")));
 
     for(int i = 0; i <listaArticulos1.size(); i++)
     {
@@ -82,11 +78,13 @@ void pantalla_mostrar::mostrar_articulos()
         QStandardItem *nombre = new QStandardItem (listaArticulos1[i].getNombre());
         QStandardItem *costo = new QStandardItem(QString::number(listaArticulos1[i].getCosto()));
         QStandardItem *id_venta = new QStandardItem (QString::number(listaArticulos1[i].getIdVenta()));
+        QStandardItem *grado_satisfaccion = new QStandardItem (QString::number(listaArticulos1[i].getGradoSat()));
 
         model_articulos->setItem(i, 0, id);
         model_articulos->setItem(i, 1, nombre);
         model_articulos->setItem(i, 2, costo);
         model_articulos->setItem(i, 3, id_venta);
+        model_articulos->setItem(i, 4, grado_satisfaccion);
 
     }
 

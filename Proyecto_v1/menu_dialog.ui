@@ -65,6 +65,19 @@
     <string>ORDENAR</string>
    </property>
   </widget>
+  <widget class="QPushButton" name="boton_buscar">
+   <property name="geometry">
+    <rect>
+     <x>440</x>
+     <y>280</y>
+     <width>161</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>BUSCAR</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>

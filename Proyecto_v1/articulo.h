@@ -11,6 +11,7 @@ private:
     QString nombre;
     double costo;
     int id_venta;
+    int grado_satisfaccion;
     int opcion;
 public:
     articulo();
@@ -24,6 +25,8 @@ public:
     double getCosto()const;
     void setIdVenta(int);
     int getIdVenta()const;
+    void setGradoSat(int);
+    int getGradoSat()const;
 
     void set_opc(int opcion_text)
     {opcion=opcion_text;}
@@ -34,7 +37,6 @@ public:
     bool operator<(const articulo& obj)const{
         if(opcion==1){return id_venta<obj.id_venta;}
     }
-
 
     bool operator>(const articulo& obj)const{
          if(opcion==1){return id_venta>obj.id_venta;}}

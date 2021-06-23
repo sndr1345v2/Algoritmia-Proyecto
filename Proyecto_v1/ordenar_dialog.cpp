@@ -263,6 +263,7 @@ void ordenar_dialog::actualiza_listaArticuloCopy()
     model_articulos->setHorizontalHeaderItem(1,new QStandardItem(QString("Nombre")));
     model_articulos->setHorizontalHeaderItem(2,new QStandardItem(QString("Costo")));
     model_articulos->setHorizontalHeaderItem(3,new QStandardItem(QString("Numero_ventas")));
+    model_articulos->setHorizontalHeaderItem(4,new QStandardItem(QString("Grado_satisfaccion")));
 
     for(int i = 0; i <listaArticuloCopy.size(); i++)
     {
@@ -270,11 +271,14 @@ void ordenar_dialog::actualiza_listaArticuloCopy()
         QStandardItem *nombre = new QStandardItem (listaArticuloCopy[i].getNombre());
         QStandardItem *costo = new QStandardItem(QString::number(listaArticuloCopy[i].getCosto()));
         QStandardItem *id_venta = new QStandardItem (QString::number(listaArticuloCopy[i].getIdVenta()));
+        QStandardItem *grado_satisfaccion = new QStandardItem (QString::number(listaArticuloCopy[i].getGradoSat()));
 
         model_articulos->setItem(i, 0, id);
         model_articulos->setItem(i, 1, nombre);
         model_articulos->setItem(i, 2, costo);
         model_articulos->setItem(i, 3, id_venta);
+        model_articulos->setItem(i, 4, grado_satisfaccion);
+
 
     }
 
@@ -384,12 +388,13 @@ void ordenar_dialog::on_comboBox_ordenar_3_currentTextChanged(const QString &cur
 
 template<typename articulo>
 void ordenar_dialog::mostrar_ordenar_articulos(QList<articulo> listaX)
-{
+{ QStandardItemModel *model_articulos = new QStandardItemModel;
 
     model_articulos->setHorizontalHeaderItem(0,new QStandardItem(QString("Id_articulo")));
     model_articulos->setHorizontalHeaderItem(1,new QStandardItem(QString("Nombre")));
     model_articulos->setHorizontalHeaderItem(2,new QStandardItem(QString("Costo")));
     model_articulos->setHorizontalHeaderItem(3,new QStandardItem(QString("Numero_ventas")));
+    model_articulos->setHorizontalHeaderItem(4,new QStandardItem(QString("Grado_satisfaccion")));
 
     for(int i = 0; i <listaX.size(); i++)
     {
@@ -397,11 +402,13 @@ void ordenar_dialog::mostrar_ordenar_articulos(QList<articulo> listaX)
         QStandardItem *nombre = new QStandardItem (listaX[i].getNombre());
         QStandardItem *costo = new QStandardItem(QString::number(listaX[i].getCosto()));
         QStandardItem *id_venta = new QStandardItem (QString::number(listaX[i].getIdVenta()));
+        QStandardItem *grado_satisfaccion = new QStandardItem (QString::number(listaX[i].getGradoSat()));
 
         model_articulos->setItem(i, 0, id);
         model_articulos->setItem(i, 1, nombre);
         model_articulos->setItem(i, 2, costo);
         model_articulos->setItem(i, 3, id_venta);
+        model_articulos->setItem(i, 4, grado_satisfaccion);
 
     }
 

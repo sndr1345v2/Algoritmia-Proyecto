@@ -37,3 +37,13 @@ int articulo::getIdVenta() const{
     return id_venta;
 }
 
+void articulo::setGradoSat(int grado_sat)
+{
+    grado_satisfaccion = grado_sat;
+}
+
+int articulo::getGradoSat() const
+{
+    return grado_satisfaccion;
+}
+
