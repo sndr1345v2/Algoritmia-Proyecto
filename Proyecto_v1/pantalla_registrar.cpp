@@ -12,3 +12,8 @@ pantalla_registrar::~pantalla_registrar()
 {
     delete ui;
 }
+
+void pantalla_registrar::on_pushButton_5_clicked()
+{
+    regresar_menu();
+}

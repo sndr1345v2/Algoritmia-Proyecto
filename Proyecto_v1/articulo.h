@@ -36,13 +36,19 @@ public:
 
     bool operator<(const articulo& obj)const{
         if(opcion==1){return id_venta<obj.id_venta;}
+        if(opcion==2){return grado_satisfaccion<obj.grado_satisfaccion;}
     }
 
     bool operator>(const articulo& obj)const{
-         if(opcion==1){return id_venta>obj.id_venta;}}
+         if(opcion==1){return id_venta>obj.id_venta;}
+         if(opcion==2){return grado_satisfaccion>obj.grado_satisfaccion;}
+
+    }
 
     bool operator==(const articulo& obj)const{
          if(opcion==1){return id_venta==obj.id_venta;}
+         if(opcion==2){return grado_satisfaccion == obj.grado_satisfaccion;}
+
     }
 
 };

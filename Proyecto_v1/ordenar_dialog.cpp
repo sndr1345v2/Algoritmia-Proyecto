@@ -376,7 +376,7 @@ void ordenar_dialog::on_comboBox_ordenar_3_currentTextChanged(const QString &cur
             std::copy(listaArticuloCopy.begin(), listaArticuloCopy.end(), std::back_inserter(vector1));
 
             for(int i=0; i<vector1.size();i++){
-                vector1[i].set_opc(1);
+                vector1[i].set_opc(2);
             }
             vector2 = merge_sort(vector1);
             listaArticuloCopy.clear();

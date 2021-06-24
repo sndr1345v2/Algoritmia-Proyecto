@@ -22,3 +22,8 @@ void pantalla_modificar::on_btnIdArticulo_clicked()
 
 
 
+
+void pantalla_modificar::on_pushButton_3_clicked()
+{
+    emit regresar_menu();
+}

@@ -11,6 +11,7 @@ principal::principal(QObject *parent) : QObject(parent)
     p_modificar = new pantalla_modificar();
     p_registrar = new pantalla_registrar ();
     p_ordenar = new ordenar_dialog();
+    p_buscar = new pantalla_buscar();
     
     QObject::connect(menu, SIGNAL(mostrar_pantalla()), this, SLOT(abre_mostrar()));
     QObject::connect(p_mostrar, SIGNAL(regresa_menu()), this, SLOT(abre_menu()));
@@ -18,8 +19,13 @@ principal::principal(QObject *parent) : QObject(parent)
     QObject::connect(p_ordenar, SIGNAL(regresa_menu()), this, SLOT(abre_menu()));
     QObject::connect(this, SIGNAL(envia_listas(QList<cliente>,QList<articulo>,QList<encuesta>,QList<venta>)), p_mostrar, SLOT(recibe_listas(QList<cliente>,QList<articulo>,QList<encuesta>,QList<venta>)));
     QObject::connect(this, SIGNAL(envia_listas_ordenar(QList<venta>,QList<encuesta>,QList<articulo>)), p_ordenar, SLOT(recibe_listas_ordenar(QList<venta>,QList<encuesta>,QList<articulo>)));
+    QObject::connect(menu,SIGNAL(modificar_pantalla()), this, SLOT(abre_modificar()));
+    QObject::connect(menu,SIGNAL(capturar_pantalla()), this, SLOT(abre_capturar()));
+    QObject::connect(menu,SIGNAL(buscar_pantalla()), this, SLOT(abre_buscar()));
+    QObject::connect(p_buscar, SIGNAL(regresar_menu()), this, SLOT(abre_menu()));
+    QObject::connect(p_registrar, SIGNAL(regresar_menu()), this, SLOT(abre_menu()));
+    QObject::connect(p_modificar, SIGNAL(regresar_menu()), this, SLOT(abre_menu()));
 
-    
 }
 
 //Clientes
@@ -188,6 +194,16 @@ void principal::abre_menu()
         menu->setVisible(true);
         p_modificar->setVisible(false);
     }
+    else if (p_buscar->isVisible()){
+
+        menu->setVisible(true);
+        p_buscar->setVisible(false);
+    }
+
+    else if (p_registrar->isVisible()){
+        menu->setVisible(true);
+        p_registrar->setVisible(false);
+    }
     else if (p_registrar->isVisible()){
         
         menu->setVisible(true);
@@ -197,6 +213,11 @@ void principal::abre_menu()
         
         menu->setVisible(true);
         p_ordenar->setVisible(false);
+    }
+    else if(p_modificar->isVisible()){
+
+        menu->setVisible(true);
+        p_modificar->setVisible(false);
     }
     
 }
@@ -218,4 +239,17 @@ void principal::abre_ordenar()
     p_ordenar->setVisible(true);
 }
 
+void principal::abre_modificar(){
+    menu->hide();
+    p_modificar->setVisible(true);
+}
 
+void principal::abre_capturar(){
+    menu->hide();
+    p_registrar->setVisible(true);
+}
+
+void principal::abre_buscar(){
+    menu->hide();
+    p_buscar->setVisible(true);
+}

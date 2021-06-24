@@ -74,6 +74,7 @@ void pantalla_mostrar::mostrar_articulos()
 
     for(int i = 0; i <listaArticulos1.size(); i++)
     {
+
         QStandardItem *id = new QStandardItem(listaArticulos1[i].getId());
         QStandardItem *nombre = new QStandardItem (listaArticulos1[i].getNombre());
         QStandardItem *costo = new QStandardItem(QString::number(listaArticulos1[i].getCosto()));

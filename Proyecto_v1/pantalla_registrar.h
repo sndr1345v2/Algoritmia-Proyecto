@@ -15,8 +15,13 @@ public:
     explicit pantalla_registrar(QWidget *parent = nullptr);
     ~pantalla_registrar();
 
+private slots:
+    void on_pushButton_5_clicked();
+
 private:
     Ui::pantalla_registrar *ui;
+signals:
+    void regresar_menu();
 };
 
 #endif // PANTALLA_REGISTRAR_H

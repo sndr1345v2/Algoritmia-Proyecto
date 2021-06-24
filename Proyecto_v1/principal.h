@@ -7,7 +7,7 @@
 #include <pantalla_mostrar.h>
 #include <pantalla_registrar.h>
 #include <ordenar_dialog.h>
-
+#include <pantalla_buscar.h>
 
 class principal : public QObject
 {
@@ -20,7 +20,8 @@ public:
     pantalla_modificar *p_modificar;
     pantalla_registrar *p_registrar;
     ordenar_dialog *p_ordenar;
-    
+    pantalla_buscar *p_buscar;
+
     void cargar_clientes();
     void cargar_articulos();
     void cargar_venta();
@@ -49,8 +50,9 @@ public slots:
     void cierra_menu();
     void abre_mostrar();
     void abre_ordenar();
-    
-    
+    void abre_modificar();
+    void abre_capturar();
+    void abre_buscar();
 };
 
 #endif // PRINCIPAL_H
